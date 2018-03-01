@@ -1,0 +1,501 @@
+@import "bourbon"
+@import "fonts"
+@import "libs"
+@import "vars"
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+ 
+// Reset style
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video
+	margin: 0
+	padding: 0
+	border: 0
+	font-size: 100%
+	font: inherit
+	vertical-align: baseline
+	box-sizing: border-box
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section
+	display: block
+
+ol, ul
+	list-style: none
+	list-style-type: none
+
+blockquote, q
+	quotes: none
+
+blockquote:before, blockquote:after,
+q:before, q:after
+	content: ''
+	content: none
+
+table
+	border-collapse: collapse
+	border-spacing: 0
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+body
+	font-size: 14px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	letter-spacing: 0.25px
+	font-family: 'PT Sans', Arial, Tahoma, sans-serif;
+	overflow-x: hidden
+
+a
+	outline: none
+	&:focus, &:visited
+		outline: none
+
+.wrapper
+	min-height: 100vh
+	display: flex
+	flex-direction: column
+	justify-content: flex-start
+	align-items: flex-start
+
+
+// Header style
+
+
+.header
+	width: 100%
+	background-color: $header_bg
+
+.header__wr
+	padding: 65px 0
+	display: flex
+	justify-content: flex-start
+	align-items: center
+
+.header__home
+	display: block
+	img
+		display: block
+		max-width: 100%
+
+.header__contact
+	margin-left: auto
+	display: flex
+	flex-direction: column
+
+.contact__phone
+	font-family: $second-font
+	font-size: 2.857142857142857em
+	color: $gray
+	line-height: 1.2em
+	&:hover, &:focus, &:visited
+		text-decoration: none
+		color: $gray
+
+// Nav style
+
+.navigation
+	width: 100%
+	background-color: $darkgray
+
+.mobile__menu
+	display: none
+	padding: 20px 0 20px 15px
+	a
+		display: flex
+		justify-content: flex-start
+		align-items: center
+		color: #fff
+		&:hover, &:focus, &:visited
+			text-decoration: none
+			color: #fff
+		&:hover
+			svg
+				path
+					fill: #333
+
+.mobile__icon
+	display: inline-block
+	margin-right: 10px
+	line-height: 1em
+	svg
+		display: inline-block
+		width: 40px
+		height: 40px
+		path
+			transition: all 200ms linear
+
+.mobile__name
+	font-size: 1.2857142857142858em
+	color: #fff
+	letter-spacing: 1px
+	text-transform: uppercase
+
+.mobile__close
+	display: none
+
+.nav__wr
+	height: 80px
+	transition: all 400ms ease-in-out
+	display: flex
+	justify-content: center
+	align-items: center
+
+.nav__item
+	position: relative
+	padding: 0 20px
+	line-height: 1em
+	&:after
+		content: ''
+		position: absolute
+		left: 100%
+		top: 50%
+		width: 2px
+		height: 25px
+		background-color: #fff
+		transform: translateY(-50%)
+	&:last-child
+		&:after
+			display: none
+
+.nav__link
+	position: relative
+	display: inline-block
+	font-size: 2.142857142857143em
+	line-height: 1em
+	color: #fff
+	&:before
+		content: ''
+		position: absolute
+		left: 50%
+		bottom: 0
+		width: 0
+		height: 2px
+		background-color: #fff
+		transition: all 300ms linear
+		transform: translateX(-50%)
+	&:hover, &:focus, &:visited
+		text-decoration: none
+		color: #fff
+	&:hover
+		&:before
+			width: 100%
+
+// Slider style
+
+.slider
+	position: relative
+	width: 100%
+	background-color: $slider_bg
+
+.slider__wr
+	max-height: 400px
+	overflow: hidden
+	.slick-arrow
+		width: 32px
+		height: 60px
+		z-index: 10
+		content: ''
+		&:before
+			content: ''
+		svg
+			display: block
+			width: 32px
+			height: 60px
+			.svg_path
+				fill: #000
+				transition: all 300ms linear
+		&:hover
+			svg
+				.svg_path
+					fill: #fff
+	.slick-prev
+		left: calc((100vw - 1170px) / 2)
+	.slick-next
+		right: calc((100vw - 1170px) / 2)
+
+.slider__item
+	position: relative
+
+.slider__img
+	width: 100%
+	height: auto
+
+.slider__nav
+	position: absolute
+	height: 100%
+	top: 0
+	left: 50%
+	transform: translateX(-50%)
+
+.slider_prev
+	position: absolute
+	left: 0
+
+
+// Content style
+
+.content
+	width: 100%
+	background-color: #fff
+	flex-grow: 1
+
+.content__wr
+	padding: 30px 0 195px
+	display: flex
+	justify-content: flex-start
+
+.content__news
+	min-width: 350px
+	max-width: 350px
+	margin-right: 60px
+
+.news__wr
+	padding: 20px 60px 80px 35px
+	background-color: $darkgray
+
+.news__title
+	margin-bottom: 30px
+	font-size: 2.857142857142857em
+	font-weight: 700
+	color: #fff
+	line-height: 1em
+
+.news__item
+	margin-top: 20px
+	line-height: 22px
+	color: #fff
+
+.news__date
+	font-style: italic
+
+.news__descr
+	color: inherit
+	display: inline-block
+	&:hover, &:focus, &:visited
+		color: #fff
+		text-decoration: underline
+
+.news__archive
+	margin-top: 35px
+	text-align: right
+
+.archive__link
+	color: #fff
+	line-height: 1em
+	text-decoration: underline
+	&:hover, &:focus, &:visited
+		text-decoration: none
+		color: #fff
+
+.content__main
+	width: 100%
+	margin-left: auto
+	
+.main__title
+	margin-top: 10px
+	font-size: 2.857142857142857em
+	line-height: 1em
+	color: $gray
+
+.main__text
+	margin-top: 20px
+	color: $gray
+	line-height: 22px
+
+// Footer style
+
+.footer
+	min-height: 90px
+	background-color: $gray
+	margin-top: auto
+	width: 100%
+
+.footer__wr
+	min-height: 220px
+	color: #fff
+	display: flex
+	justify-content: flex-start
+
+.footer__column
+	width: 33.33%
+	padding-top: 50px
+
+.copyright
+	margin-top: 50px
+	line-height: 22px
+
+.menu
+	margin-top: 50px
+
+.menu__item
+	margin-bottom: 10px
+	line-height: 1em
+	&:last-child
+		margin-bottom: 0
+
+.menu__link
+	line-height: 1em
+	color: #fff
+	text-decoration: underline
+	&:hover, &:focus, &:visited
+		text-decoration: none
+		color: #fff
+
+.author
+	margin-top: -27px
+	display: flex
+	justify-content: flex-start
+	align-items: center
+
+.author__descr
+	line-height: 22px
+	color: #fff
+	margin-left: 15px
+	a
+		color: #fff
+		text-decoration: underline
+		&:hover
+			text-decoration: none
+			color: #fff
+
+// Modal styles
+
+.modal
+	position: relative
+	display: block
+	max-width: 500px
+	margin-left: auto
+	margin-right: auto
+	padding: 30px
+	border: none
+	border-radius: 5px
+	background-color: #fff
+	box-shadow: 0 0 20px rgba(0,0,0,.5)
+	h1
+		font-weight: bold
+		margin-bottom: 10px
+		font-size: 18px
+
+// Animation style
+
+.mfp-fade.mfp-bg
+	opacity: 0
+	transition: all 0.15s ease-out
+
+.mfp-fade.mfp-bg.mfp-ready
+	opacity: 0.8
+
+.mfp-fade.mfp-bg.mfp-removing
+	opacity: 0
+
+.mfp-fade.mfp-wrap .mfp-content
+	opacity: 0
+	transition: all 0.15s ease-out
+
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content
+	opacity: 1
+
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content
+	opacity: 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import "media" // Всегда в конце
